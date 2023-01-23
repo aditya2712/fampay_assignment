@@ -109,6 +109,12 @@ load_dotenv()  # loads the configs from .env
 YOUTUBE_API_KEY_1 = str(os.getenv("YOUTUBE_API_KEY_1"))
 YOUTUBE_API_KEY_2 = str(os.getenv("YOUTUBE_API_KEY_2"))
 
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+    'PAGE_SIZE': 10
+}
+
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/

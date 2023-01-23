@@ -1,7 +1,8 @@
-from django.contrib import admin
-from django.urls import include, path
+from django.urls import path
+
+from .views import VideosList
 
 urlpatterns = [
-    path("polls/", include("polls.urls")),
-    path("admin/", admin.site.urls),
+    # GET /videos?tag=tag_name
+    path("videos/", VideosList.as_view(), name="get_videos_list"),
 ]
