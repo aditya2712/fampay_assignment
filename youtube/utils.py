@@ -1,6 +1,5 @@
 import requests
 from datetime import datetime, timedelta
-from pprint import pprint
 
 # import env vars from settings
 from fampay_assignment.settings import YOUTUBE_API_KEY_1, YOUTUBE_API_KEY_2
@@ -33,7 +32,7 @@ def fetch_videos(tag: str, published_after: str):
             video["thumbnail_urls"] = []
             for thumbnail in item["snippet"]["thumbnails"].values():
                 video["thumbnail_urls"].append(thumbnail["url"])
-                
+
             videos.append(video)
 
         if "nextPageToken" in response:
@@ -43,5 +42,4 @@ def fetch_videos(tag: str, published_after: str):
         else:
             break
 
-    pprint(videos)
     return videos
