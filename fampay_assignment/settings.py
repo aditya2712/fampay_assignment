@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+from dotenv import load_dotenv
+import os
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -100,6 +103,11 @@ AUTH_PASSWORD_VALIDATORS = [
         "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
     },
 ]
+
+load_dotenv()  # loads the configs from .env
+
+YOUTUBE_API_KEY_1 = str(os.getenv("YOUTUBE_API_KEY_1"))
+YOUTUBE_API_KEY_2 = str(os.getenv("YOUTUBE_API_KEY_2"))
 
 
 # Internationalization
